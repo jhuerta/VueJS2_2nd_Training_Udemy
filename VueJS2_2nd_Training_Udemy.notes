@@ -1,0 +1,71 @@
+`----------------------------------------------------`
+1. List One 
+2. List Two 
+`----------------------------------------------------`
+--> ----> 
+==> ===> ====>
+`----------------------------------------------------`
+[javascript]
+function() {
+    console.log("Hellow World!");
+}
+[end]
+
+function(){
+        console.log("Hellow World!");
+}
+
+`----------------------------------------------------`
+`Take Note` #Highlight# "Emphasis" * Important * !Remember! 
+//Comment
+[Square] (Other) {Brackets}
+`----------------------------------------------------`
+http://www.google.com
+`----------------------------------------------------`
+
+#SECTION 1.1: FIRST BASIC APPLICATION#
+[javascript]
+    var vueArguments = {
+    el: '#app',
+    data: {
+        title: 'Hello VueJS!',
+        googleLink: 'http://www.google.com'
+    },
+    methods: {
+        getText: function() {
+        return "Some Text";
+        },
+        changeTitle: function(event) {
+        this.title = this.getText() + ":  " + event.target.value;
+        }
+    }
+    }
+
+    new Vue(vueArguments);
+[end]
+
+
+#SECTION 1.3#
+    - Use 'event.target.value;' to get the value of an input control from an event
+
+#SECTION 2.11#
+    - Use this to access the variables and methods inside the Vue instance
+    - Notice you can combine and use javascript within the {{}} signs:
+        [html]
+            <p>{{ compundText + ' ' + timeOfNow() }}</p>
+            <p>{{ timeOfNow() }}</p>
+            <p>{{ 'someString'.toUpperCase() }}</p>
+        [end]
+#SECTION 2.12#
+    [javascript]
+    data: {
+        title: 'Hello VueJS!',
+        compundText: 'Hello VueJS!',
+        googleLink: 'http://www.google.com'
+    },
+    [end]
+
+    - This binding wont work, we can't use {{}} in the attributes of the html element
+        <a href="{{googleLink}}">Check Google!</a>
+    -Instead, you have to use a directive named v-bind,where the argument of v-bind is "href", and afterwhich no curly braces ({{}}) anymore, just Vue syntax
+        <a v-bind:href="googleLink">Check Google!</a>
