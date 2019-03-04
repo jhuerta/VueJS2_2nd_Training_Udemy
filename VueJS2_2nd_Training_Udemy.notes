@@ -57,15 +57,22 @@ http://www.google.com
             <p>{{ 'someString'.toUpperCase() }}</p>
         [end]
 #SECTION 2.12#
-    [javascript]
-    data: {
-        title: 'Hello VueJS!',
-        compundText: 'Hello VueJS!',
-        googleLink: 'http://www.google.com'
-    },
-    [end]
+[javascript]
+data: {
+    title: 'Hello VueJS!',
+    compundText: 'Hello VueJS!',
+    googleLink: 'http://www.google.com'
+},
+[end]
 
     - This binding wont work, we can't use {{}} in the attributes of the html element
         <a href="{{googleLink}}">Check Google!</a>
     -Instead, you have to use a directive named v-bind,where the argument of v-bind is "href", and afterwhich no curly braces ({{}}) anymore, just Vue syntax
         <a v-bind:href="googleLink">Check Google!</a>
+#SECTION 2.13#
+        <a v-bind:ARGUMENT="DATA_PROPERTY"></a>
+        Binds a value where no {{}} can be used to your object data
+#SECTION 2.14#
+    - v-once : Only update the value once <h1 v-once>{{ title}}</h1>
+
+
