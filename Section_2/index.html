@@ -1,25 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Vue Section 1</title>
-    <script src="vue.js"></script>
-  </head>
 
-  <body>
-    <div id="app">
-      <input type="text" v-on:input="changeTitle" />
-      <p>{{ compundText + " " + timeOfNow() }}</p>
-      <p>{{ timeOfNow() }}</p>
-      <p>{{ "someString".toUpperCase() }}</p>
-      <a v-bind:href="googleLink">Check Google!</a>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Vue Section 1</title>
+  <script src="vue.js"></script>
+</head>
 
-      <h1>IT GETS UPDATED (title):Multiple: {{ title }}</h1>
-      <h1 v-once>IT SHOULD NOT CHANGE (title): {{ title }}</h1>
-    </div>
-  </body>
+<body>
+  <div id="app">
+    <input type="text" v-on:input="changeTitle" />
+    <p>{{ complexObject() }}</p>
+    <p>{{ compundText + " " + timeOfNow() }}</p>
+    <p>{{ timeOfNow() }}</p>
+    <p>{{ "someString".toUpperCase() }}</p>
+    <a v-bind:href="googleLink">Check Google!</a>
+    <p>Represnetation of a link: {{finishedLink}}</p>
+    <p>Represnetation of a link with v-html: <t v-html="finishedLink"></t>
+    </p>
 
-  <script src="app.js"></script>
+    <h1>IT GETS UPDATED (title):Multiple: {{ title }}</h1>
+    <h1 v-once>IT SHOULD NOT CHANGE (title): {{ title }}</h1>
+  </div>
+</body>
+
+<script src="app.js"></script>
+
 </html>
