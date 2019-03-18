@@ -97,3 +97,23 @@ data: {
     - Alternative to COMPUTED PROPERTIES: watch object. Watch object: over a data property, it does watch when that property changes and react. Computed, on the other hand, it will execute a method when some of its inner property changes.
 #SECTION 2.25#
     - Shortcuts: v-on:click='doSomething' ==> @click='doSomething' // v-bind:href='abc' ==> :href='abc'
+#SECTION 2.26#
+    - :class="{CLASS_1_NAME: BOOLEAN_VALUE_1, CLASS_2_NAME: BOOLEAN_VALUE_2} use that to switch on and off css classes conditionally.
+    This can also be added to a computed property and therefore, the logic to choose classes dinamically will be moved into the vue instance
+    - v-bind:style="{'background-color': PROPERTY_VALUE}" This will allow to attach the style to a property
+    - Assigning classes option:
+        :class="[divClasses, {red:true}, otherColor]"
+            divClasses is a computed property: 
+                - divClasses: function () { return {red: this.attachRed,green: this.attachGreen,yellow:this.attachYellow}}
+                - {red:true} ===> {className: activateOrNot}
+                - otherColor ===> Data property with class name otherColor: otherColor: 'yellow' or object type: otherColor: {'green': true}
+    - Modifying style: Similar to classes, it is possible to add object: 
+            <div class="demo" :style="divStyle"></div>
+            
+            computed: {
+                divStyle: function () {
+                    return {
+                        "background-color": this.divColor,
+                        width: this.divWidth + 'px'
+                }
+            }

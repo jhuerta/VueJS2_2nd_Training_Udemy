@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue Section 1</title>
+    <script src="vue.js"></script>
+
+    <style>
+        .demo {
+            width: 50px;
+            height: 50px;
+            border: 2px solid cornflowerblue;
+            margin: 10px;
+            background-color: grey;
+            color: white;
+            font-weight: bolder;
+        }
+
+        .red {
+            background-color: red;
+        }
+
+        .green {
+            background-color: green;
+        }
+
+        .yellow {
+            background-color: yellow;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="app">
+        <div class="demo" @click="attachRed = !attachRed" :class="[divClasses, {red:true}, otherColor, otherColorNotActivated]">Red</div>
+        <div class="demo" @click="attachGreen = !attachGreen" :class="{green: attachGreen}">Green</div>
+        <div class="demo" @click="attachYellow = !attachYellow" :class="color" v-bind:style="{'background-color': color}">Yellow</div>
+        <input type="text" v-model='color'> {{color}}
+
+        <div class="demo" :style="{'background-color': divColor}"></div>
+        <button @click='startColorChange'>START CHANGE COLOR</button>
+        <b>Color: </b>{{divColor}}
+
+
+
+        <div class="demo" :style="divStyle"></div>
+        Div Color: <input type="text" v-model='divColor'>
+        Div Width: <input type="number" v-model='divWidth'>
+
+
+
+
+
+    </div>
+</body>
+
+<script src="
+            app.js">
+</script>
+
+
+
+</html>
