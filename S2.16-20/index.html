@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue Section 2.16</title>
+    <script src="vue.js"></script>
+
+</head>
+
+<body>
+    <div id="app">
+        <button v-on:click='increase(increment, $event)'>Click Me: {{ counter }}</button>
+        <div v-on:mousemove='updateCoordinates' style="border:5px solid lightskyblue;background-color: lightcyan">HOVER
+            ON ME
+            <p v-on:mousemove.stop='' style="border:5px solid saddlebrown;background-color:slategray">{{x}}
+                - {{y}}</p>
+
+            <div v-on:mousemove='doNothing' style="border:5px solid lime;background-color:mediumspringgreen">DO
+                NOTHING
+            </div>
+            <div style="border:5px solid rosybrown;background-color:rebeccapurple">HERE STILL SOMETHING CAN BE DONE</div>
+            <div v-on:mousemove.stop='' style="border:5px solid olivedrab;background-color:palevioletred">
+                STOP USING MODIFIER
+            </div>
+
+        </div>
+
+        <label for="">Number</label> <input type="number" v-model='increment'>
+        <label for="">Text</label> <input type="text" v-on:keyup='showKey' v-on:keyup.enter.space='alertSpaceOrIntro'>
+    </div>
+</body>
+
+<script src="app.js"></script>
+
+</html>

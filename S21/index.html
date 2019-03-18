@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue Section 1</title>
+    <script src="vue.js"></script>
+
+</head>
+
+<body>
+    <div id="app">
+        <button v-on:click="increase(1)">INCREASE</button>
+        <button v-on:click="decrease(1)">DECREASE</button>
+        <input type="text" v-model='resetAmount'> <button v-on:click="reset(resetAmount)">Reset</button>
+        <p><b>Value: </b>{{ counter }}</p>
+        <p><b>Message: </b>{{ message() }}</p>
+        <p><b>Output Message (computed): </b>{{ outputMessage }}</p>
+        <p><b>Age: </b>{{ age }}</p> <button v-on:click='multiplyAge'>x10</button>
+    </div>
+</body>
+
+<script src="app.js"></script>
+
+</html>
